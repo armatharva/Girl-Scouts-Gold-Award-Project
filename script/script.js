@@ -1,54 +1,26 @@
-/* style.css */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fafafa;
-  color: #333;
-}
+// script.js
 
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: #009A44; /* Girl Scouts green */
-  color: white;
-}
+// This runs when the page is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Website loaded ✅");
 
-.site-header .logo {
-  height: 50px;
-}
+  // Example: toggle a mobile menu
+  const menuBtn = document.querySelector("#menu-btn");
+  const navMenu = document.querySelector("#nav-menu");
 
-.site-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
+  if (menuBtn && navMenu) {
+    menuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("open"); // 'open' is a CSS class you'll define
+    });
+  }
 
-.site-header nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: #f1fdf6;
-}
-
-.card {
-  margin: 2rem auto;
-  padding: 2rem;
-  max-width: 800px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #009A44;
-  color: white;
-}
+  // Example: smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  });
+});
