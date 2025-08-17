@@ -6,12 +6,10 @@ import Videodemo from "./Videodemo";
 function App() {
   return (
     <Router>
-      <nav>
-        <ul>
-          <li><Link to="/">Education</Link></li>
-          <li><Link to="/hygiene">Hygiene Advice</Link></li>
-          <li><Link to="/video">Video Demo</Link></li>
-        </ul>
+      <nav style={{ padding: "1rem", background: "#eee" }}>
+        <Link to="/" style={{ marginRight: "1rem" }}>Education</Link>
+        <Link to="/hygiene" style={{ marginRight: "1rem" }}>Hygiene Advice</Link>
+        <Link to="/video">Video Demo</Link>
       </nav>
 
       <Routes>
